@@ -5,7 +5,7 @@ const URI= "https://api.spotify.com/v1/artists/4V8LLVI7PbaPR0K2TGSxFF/top-tracks
 
 //0.2 DECLARO LOS PARAMETROS DE LA PETICION (QUE VOY HACER)
 
-const token= "Bearer BQBRwclqniPSsbdkxjoyx8ch76Rh918NSzvFHELi3MrfDvg35RrRtYUYJVb6cOZoLn0u946VJuFOBEawyc79AZowHtMUEdE00rWcNGNgH8QVlWjQLus0fg9sMwaFpGPvyKXS1OSbaKFgRXg8atU6mWCt0ZdZMMtf2a4"
+const token= "Bearer BQDaY-tPSCxZ9VTchBHfrRSeFJzdCcQ-9hugluShgP1j5taP4ILEEtSHGURhPWISxeW3AqsmZucId-MNOvw"
 
 const peticion={
     method:"GET",
@@ -20,8 +20,7 @@ fetch(URI,peticion)
 })
 
 .then(function(respuesta) {
-    console.log(respuesta); //respuesta de un objeto
-    console.log(respuesta.tracks);//Arreglo de 10 canciones
+    console.log(respuesta.tracks); //respuesta de un objeto
     pintarCanciones(respuesta.tracks); 
 })
 
@@ -36,10 +35,7 @@ function pintarCanciones(canciones) {
 
 canciones.forEach(function(cancion) {
 
-  //  console.log(cancion); 
-    console.log(cancion.name);
-    console.log(cancion.preview_url);  
-    console.log(cancion.album.images[0].url); 
+  
 
     //Rutina para llenado
     let columna=document.createElement("div");
@@ -74,7 +70,6 @@ canciones.forEach(function(cancion) {
 
 //Rutina para consumir API con metodo post 
 //para donde voy (uri)
-
 const URIPOST="https://accounts.spotify.com/api/token"; 
 
 //2 almaceno los datos que voy a enviar 
@@ -94,7 +89,8 @@ const peticionPost={
 
 }  
 
-//voy al servidor a consumir el servicio
+//voy al servidor a consumir el servicio}
+/*
 fetch(URIPOST,peticionPost)
 .then(function(respuesta) {
 
@@ -102,11 +98,11 @@ fetch(URIPOST,peticionPost)
 })
 .then(function(respuesta) {
 
-    console.log(respuesta)
+   // console.log(respuesta)
     let token=respuesta.token_type+' '+respuesta.access_token
     console.log(token)
 })  
 .catch(function(respuesta) {
 
     console.log(respuesta);
-})
+})*/
